@@ -1,38 +1,200 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen+Mono&family=Poppins&display=swap');
+
+:root {
+  --primaryDark: hsl(20, 90%, 50%);
+  --primary: hsl(20, 90%, 60%);
+  --primaryLight: hsl(20, 90%, 70%);
+  --background: hsl(0, 0%, 33%);
+  --backgroundDark: hsl(0, 0%, 20%);
+  --backgroundLight: hsl(0, 0%, 50%);
+}
+
+.weather-results {
+  width: 16vw;
+  min-width: 200px;
+  height: 200px;
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 1.5em;
+  text-shadow: 1px 1px 1px var(--backgroundDark);
+}
+
+.weather-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100px;
+}
+
+.temp {
+  font-size: max(55px, 5vw);
+}
+
+.weather-icon {
+  width: clamp(75px, 10vw, 100px);
+  aspect-ratio: 1/1;
+}
+
+.location {
+  font-size: max(24px, 1.7vw);
+}
+
+.search-bar {
+  display: block;
+  position: relative;
+  height: fit-content;
+  width: max-content;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.searching-components {
+  display: flex;
+  height: fit-content;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+input[type=text] {
+  height: 50px;
+  width: 15vw;
+  min-width: 120px;
+  border: var(--backgroundLight) 2px solid;
+  outline: none;
+  border-radius: 5px;
+  padding-left: 1vw;
+}
+
+input[type=text]:focus {
+  border: var(--backgroundDark) 2px solid;
+}
+
+
+.button {
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  fill: var(--primaryLight);
+  background-color: var(--backgroundLight);
+  border-radius: 5px;
+  border: var(--backgroundLight) 2px solid;
+  transition: fill 0.5s, border 0.5s, background-color 0.5s;
+}
+
+.button:hover {
+  fill: var(--primaryDark);
+  background-color: var(--backgroundDark);
+  border: var(--backgroundDark) 2px solid;
+}
+
+.error {
+  color: hsl(0, 100%, 49%);
+  margin-bottom: 10px;
+  font-size: 1.3em;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.wrong-city {
+  font-weight: bold;
+  position: relative;
+  color: var(--primaryLight);
+  cursor: pointer;
+  width: fit-content;
+  left: 50%;
+  transform: translate(-50%);
+  user-select: none;
+  text-align: center;
+  border-bottom: 2px solid var(--background);
+  transition: color 0.5s border-bottom 0.5s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.wrong-city:hover {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+  text-shadow: 1px 1px 1px var(--backgroundDark);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.wrong-city-helper {
+  font-weight: bold;
+  font-size: 0.9em;
+  position: relative;
   color: white;
+  width: fit-content;
+  left: 50%;
+  transform: translate(-50%);
+  user-select: none;
+  text-align: center;
+  text-shadow: 1px 1px 1px var(--backgroundDark);
 }
 
-.App-link {
-  color: #61dafb;
+* {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
 }
 
-@keyframes App-logo-spin {
+.App {
+  height: 100vh;
+  width: 100vw;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50vh;
+  width: 100vw;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background);
+}
+
+.message {
+  font-family: 'Oxygen Mono', monospace;
+  display: flex;
+  height: 50vh;
+  width: 100vw;
+  font-size: 2em;
+  font-size: 2.2vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.typing {
+  position: absolute;
+  width: max-content;
+  height: max-content;
+  
+}
+
+.decoy {
+  background-color: white;
+  color: white;
+  position: absolute;
+  width: max-content;
+  height: calc(max-content + 0.2vw);
+  border-left: 0.2vw solid black;
+  user-select: none;
+ 
+}
+
+@keyframes typewriter {
   from {
-    transform: rotate(0deg);
+    transform: translate(0%);
   }
   to {
-    transform: rotate(360deg);
+    transform: translate(100%);
+  }
+}
+
+
+@keyframes blink {
+  0% {
+    border-left: 0.2vw solid black;
+  }
+  100% {
+    border-left: 0.2vw solid white;
   }
 }
