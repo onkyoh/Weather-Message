@@ -11,8 +11,7 @@ const Header = ({  loading, locationChosen, temp, icon, condition, wrongCity, se
             <SearchBar error={error} handleLocation={handleLocation} fetchLocation={fetchLocation} location={location} handleUserLocation={handleUserLocation}/>
             <WrongCity wrongCity={wrongCity} setWrongCity={setWrongCity} loading={loading}/>
         </div>
-            <Weather locationChosen={locationChosen} temp={temp} icon={icon} condition={condition} loading={loading}/>
-      
+            <Weather locationChosen={locationChosen} temp={temp} icon={icon} condition={condition} loading={loading}/> 
     </div>
   )
 }
