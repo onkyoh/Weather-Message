@@ -7,10 +7,7 @@ const Weather = ({locationChosen, temp, icon, condition, loading}) => {
             <div className='temp'>{temp} </div>
             <img src={icon} alt="weather-icon" className="weather-icon"/>
         </div>
-        <div className='location'>{locationChosen}</div>
-        
-        {/* <div>{condition}</div> */}
-        
+        <div className='location'>{locationChosen}</div>        
     </div>  
   )
 }

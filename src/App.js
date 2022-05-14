@@ -98,12 +98,35 @@ function App() {
   document.querySelector('.decoy').style.animation = `typewriter 10s steps(${messageGiven.length}) forwards, blink 1s infinite ease`;
   }
 
+  const handleUserLocation = () => {
+
+    const successCallback = (position) => {
+       console.log(position)
+       var locationObject = {
+         lat:  position.coords.latitude,
+         lon:  position.coords.longitude
+       }
+      fetchWeather(locationObject);
+      document.querySelector('.typing').textContent = "";
+      document.querySelector('.decoy').textContent = "";
+      document.querySelector('.decoy').style.animation = 'none';
+      setLocation(() => "");
+    }
+
+    const errorCallback = (error) => {
+      console.log(error);
+      setError(() => error.message);
+    }
+
+    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+
+  }
 
   return (
     <div className='App'>
       <Header locationChosen={locationChosen} temp={temp} icon={icon} condition={condition} loading={loading} 
       error={error} handleLocation={handleLocation} fetchLocation={fetchLocation} location={location}
-      wrongCity={wrongCity} setWrongCity={setWrongCity} />
+      wrongCity={wrongCity} setWrongCity={setWrongCity} handleUserLocation={handleUserLocation}/>
 
       <Message />
     

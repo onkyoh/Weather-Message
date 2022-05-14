@@ -8,16 +8,18 @@
   --background: hsl(0, 0%, 33%);
   --backgroundDark: hsl(0, 0%, 20%);
   --backgroundLight: hsl(0, 0%, 50%);
+  --secondary: hsl(221, 100%, 51%);
 }
 
 .weather-results {
-  width: 16vw;
+  width: 18vw;
   min-width: 200px;
-  height: 200px;
+  height: fit-content;
   color: var(--primary);
   font-weight: bold;
   font-size: 1.5em;
   text-shadow: 1px 1px 1px var(--backgroundDark);
+  margin-bottom: 1em;
 }
 
 .weather-header {
@@ -28,16 +30,18 @@
 }
 
 .temp {
-  font-size: max(55px, 5vw);
+  font-size: max(50px, 4.8vw);
 }
 
 .weather-icon {
-  width: clamp(75px, 10vw, 100px);
+  width: clamp(50px, 5vw, 100px);
   aspect-ratio: 1/1;
 }
 
 .location {
   font-size: max(24px, 1.7vw);
+  position: relative;
+  transform: translate(0, -10px);
 }
 
 .search-bar {
@@ -56,38 +60,68 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
+  margin-left: 50px;
 }
 
 input[type=text] {
   height: 50px;
-  width: 15vw;
+  width: 14vw;
   min-width: 120px;
   border: var(--backgroundLight) 2px solid;
   outline: none;
   border-radius: 5px;
   padding-left: 1vw;
+  padding-right: 35px;
 }
+
 
 input[type=text]:focus {
   border: var(--backgroundDark) 2px solid;
 }
 
-.button {
+.location-icon {
+  position: relative;
   height: 50px;
   width: 50px;
   cursor: pointer;
+  left: -100px;
+  transform: scale(75%);
+}
+
+.location-icon:hover {
+  animation: jump 1s infinite ease;
+}
+
+@keyframes jump {
+  0% {
+    transform: translate(0, 0%) scale(75%);
+  } 50% {
+    transform: translate(0, 5%) scale(75%);
+  } 100% {
+    transform: translate(0, 0%) scale(75%);
+  }
+}
+
+.button {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  position: relative;
   fill: var(--primaryLight);
   background-color: var(--backgroundLight);
-  border-radius: 5px;
+  transform: scale(90%);
+  border-radius: 50%;
   border: var(--backgroundLight) 2px solid;
-  transition: fill 0.5s, border 0.5s, background-color 0.5s;
+  transition: fill 0.5s, border 0.5s, background-color 0.5s, box-shadow 0.5s;
 }
 
 .button:hover {
-  fill: var(--primaryDark);
+  fill: var(--primary);
   background-color: var(--backgroundDark);
   border: var(--backgroundDark) 2px solid;
+  box-shadow: 1px 1px 1px gray;
 }
+
 
 .error {
   color: hsl(0, 100%, 49%);
@@ -106,27 +140,29 @@ input[type=text]:focus {
   transform: translate(-50%);
   user-select: none;
   text-align: center;
-  border-bottom: 2px solid var(--background);
-  transition: color 0.5s border-bottom 0.5s;
+  border-bottom: 2px solid white;
+  transition: color 0.5s, border-bottom 0.5s;
 }
 
 .wrong-city:hover {
   color: var(--primary);
   border-bottom: 2px solid var(--primary);
   text-shadow: 1px 1px 1px var(--backgroundDark);
+  box-shadow: 0px 4px 2px -2px var(--backgroundDark);
 }
 
 .wrong-city-helper {
   font-weight: bold;
-  font-size: 0.9em;
+  font-size: 0.7em;
   position: relative;
-  color: white;
+  color: var(--primary);
   width: fit-content;
   left: 50%;
   transform: translate(-50%);
   user-select: none;
   text-align: center;
-  text-shadow: 1px 1px 1px var(--backgroundDark);
+  padding-inline: 5%;
+
 }
 
 * {
@@ -147,7 +183,7 @@ input[type=text]:focus {
   height: 50vh;
   width: 100vw;
   font-family: 'Poppins', sans-serif;
-  background-color: var(--background);
+  background-color: white;
 }
 
 .message {
@@ -158,7 +194,7 @@ input[type=text]:focus {
   font-size: 2em;
   font-size: 2.2vw;
   justify-content: center;
-  align-items: center;
+  margin-top: 5%;
 }
 
 .typing {
