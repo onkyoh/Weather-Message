@@ -72,7 +72,6 @@ input[type=text]:focus {
   border: var(--backgroundDark) 2px solid;
 }
 
-
 .button {
   height: 50px;
   width: 50px;

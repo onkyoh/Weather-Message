@@ -16,12 +16,6 @@ function App() {
   const [error, setError] = useState("")
   const [wrongCity, setWrongCity] = useState(false)
 
-  const [wrongCityStyle] = useState({})
-  
-  const [correctCityStyle] = useState({
-  })
-
-
   const fetchWeather = async (locationObject) => {
     try {
       const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${locationObject.lat}&lon=${locationObject.lon}&appid=27a09a7637d86e974e750cf11aa6f9d9`;
@@ -109,7 +103,7 @@ function App() {
     <div className='App'>
       <Header locationChosen={locationChosen} temp={temp} icon={icon} condition={condition} loading={loading} 
       error={error} handleLocation={handleLocation} fetchLocation={fetchLocation} location={location}
-      wrongCity={wrongCity} wrongCityStyle={wrongCityStyle} correctCityStyle={correctCityStyle} setWrongCity={setWrongCity} />
+      wrongCity={wrongCity} setWrongCity={setWrongCity} />
 
       <Message />
     
