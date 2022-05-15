@@ -105,19 +105,18 @@ input[type=text]:focus {
   width: 40px;
   cursor: pointer;
   position: relative;
-  fill: var(--primaryLight);
-  background-color: var(--backgroundLight);
-  transform: scale(90%);
-  border-radius: 50%;
-  border: var(--backgroundLight) 2px solid;
-  transition: fill 0.5s, border 0.5s, background-color 0.5s, box-shadow 0.5s;
+  fill: hsl(20, 90%, 80%);
+  background-color: hsl(0, 0%, 70%);
+  border-radius: 5px;
+  border: 1px solid var(--backgroundLight);
+  transition: fill 0.5s, background-color 0.5s, box-shadow 0.5s;
 }
 
 .button:hover {
   fill: var(--primary);
   background-color: var(--backgroundDark);
-  border: var(--backgroundDark) 2px solid;
-  box-shadow: 1px 1px 1px gray;
+  box-shadow: -2px 2px 2px var(--background);
+  border: 1px solid var(--backgroundDark);
 }
 
 
@@ -145,7 +144,7 @@ input[type=text]:focus {
 .wrong-city:hover {
   color: var(--primary);
   border-bottom: 2px solid var(--primary);
-  text-shadow: 1px 1px 1px var(--backgroundDark);
+  text-shadow: -1px 1px 1px var(--backgroundDark);
   box-shadow: 0px 4px 2px -2px var(--backgroundDark);
 }
 
@@ -174,11 +173,29 @@ input[type=text]:focus {
   width: 100vw;
 }
 
+.blank-header {
+  height: 15vh;
+  width: 100vw;
+  background-color: var(--backgroundDark);
+  background-image: url(https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-sun-100-most-used-icons-flaticons-flat-flat-icons-2.png);
+  background-position: 0px;
+  background-repeat: repeat-x;
+}
+
+.footer {
+  height: 25vh;
+  width: 100vw;
+  background-color: var(--backgroundDark);
+  background-image: url(https://img.icons8.com/color-glass/48/000000/snowflake.png);
+  background-position: 0 60px;
+  background-repeat: repeat-x;
+}
+
 .header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 50vh;
+  height: 40vh;
   width: 100vw;
   font-family: 'Poppins', sans-serif;
   background-color: white;
@@ -187,7 +204,7 @@ input[type=text]:focus {
 .message {
   font-family: 'Oxygen Mono', monospace;
   display: flex;
-  height: 50vh;
+  height: 20vh;
   width: 100vw;
   font-size: 2em;
   font-size: 2.2vw;

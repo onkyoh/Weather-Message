@@ -124,11 +124,14 @@ function App() {
 
   return (
     <div className='App'>
+
+    <div className="blank-header"></div>
       <Header locationChosen={locationChosen} temp={temp} icon={icon} condition={condition} loading={loading} 
       error={error} handleLocation={handleLocation} fetchLocation={fetchLocation} location={location}
       wrongCity={wrongCity} setWrongCity={setWrongCity} handleUserLocation={handleUserLocation}/>
 
       <Message />
+    <div className='footer'></div>
     
     </div>
   );
