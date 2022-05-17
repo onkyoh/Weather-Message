@@ -177,7 +177,7 @@ input[type=text]:focus {
   width: 100vw;
   background-color: var(--backgroundDark);
   background-image: url(https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-sun-100-most-used-icons-flaticons-flat-flat-icons-2.png);
-  background-position: 0px;
+  background-position: 0 50%;
   background-repeat: repeat-x;
 }
 
@@ -186,8 +186,8 @@ input[type=text]:focus {
   width: 100vw;
   background-color: var(--backgroundDark);
   background-image: url(https://img.icons8.com/color-glass/48/000000/snowflake.png);
-  background-position: 0px;
   background-repeat: repeat-x;
+  background-position: 0 50%;
 }
 
 .header {
