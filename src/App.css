@@ -83,7 +83,7 @@ input[type=text]:focus {
   width: 50px;
   cursor: pointer;
   transform: scale(75%);
-  right: 45px;
+  right: 40px;
 }
 
 .location-icon:hover {
@@ -105,18 +105,19 @@ input[type=text]:focus {
   width: 40px;
   cursor: pointer;
   position: relative;
-  fill: hsl(20, 90%, 80%);
-  background-color: hsl(0, 0%, 70%);
+  fill: var(--primary);
+  background-color: var(--background);
   border-radius: 5px;
-  border: 1px solid var(--backgroundLight);
-  transition: fill 0.5s, background-color 0.5s, box-shadow 0.5s;
+  transition: fill 0.5s, background-color 0.5s;
 }
 
 .button:hover {
-  fill: var(--primary);
-  background-color: var(--backgroundDark);
-  box-shadow: -2px 2px 2px var(--background);
-  border: 1px solid var(--backgroundDark);
+
+  fill: hsl(20, 90%, 80%);
+  background-color: hsl(0, 0%, 70%);
+  fill: var(--primaryLight);
+  background-color: var(--backgroundLight);
+
 }
 
 
@@ -144,8 +145,6 @@ input[type=text]:focus {
 .wrong-city:hover {
   color: var(--primary);
   border-bottom: 2px solid var(--primary);
-  text-shadow: -1px 1px 1px var(--backgroundDark);
-  box-shadow: 0px 4px 2px -2px var(--backgroundDark);
 }
 
 .wrong-city-helper {
@@ -174,7 +173,7 @@ input[type=text]:focus {
 }
 
 .blank-header {
-  height: 15vh;
+  height: 20vh;
   width: 100vw;
   background-color: var(--backgroundDark);
   background-image: url(https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-sun-100-most-used-icons-flaticons-flat-flat-icons-2.png);
@@ -183,11 +182,11 @@ input[type=text]:focus {
 }
 
 .footer {
-  height: 25vh;
+  height: 20vh;
   width: 100vw;
   background-color: var(--backgroundDark);
   background-image: url(https://img.icons8.com/color-glass/48/000000/snowflake.png);
-  background-position: 0 60px;
+  background-position: 0px;
   background-repeat: repeat-x;
 }
 
@@ -209,7 +208,6 @@ input[type=text]:focus {
   font-size: 2em;
   font-size: 2.2vw;
   justify-content: center;
-  margin-top: 5%;
 }
 
 .typing {
