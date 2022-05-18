@@ -12,28 +12,29 @@
 }
 
 .weather-results {
-  width: 17vw;
-  min-width: 170px;
+  width: 45vw;
+  min-width: 250px;
   height: fit-content;
   color: var(--primary);
   font-weight: bold;
   font-size: 1.5em;
   text-shadow: 1px 1px 1px var(--backgroundDark);
+  text-align: center;
 }
 
 .weather-header {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   height: 100px;
 }
 
 .temp {
-  font-size: max(50px, 4.8vw);
+  font-size: max(65px, 4.8vw);
 }
 
 .weather-icon {
-  width: clamp(50px, 5vw, 100px);
+  width: clamp(80px, 5vw, 100px);
   aspect-ratio: 1/1;
 }
 
@@ -74,7 +75,7 @@ input[type=text] {
 
 
 input[type=text]:focus {
-  border: var(--backgroundDark) 2px solid;
+  border: var(--primary) 2px solid;
 }
 
 .location-icon {
@@ -113,13 +114,10 @@ input[type=text]:focus {
 
 .button:hover {
 
-  fill: hsl(20, 90%, 80%);
-  background-color: hsl(0, 0%, 70%);
-  fill: var(--primaryLight);
-  background-color: var(--backgroundLight);
+  fill: var(--primaryDark);
+  background-color: var(--backgroundDark);
 
 }
-
 
 .error {
   color: hsl(0, 100%, 49%);
@@ -138,7 +136,7 @@ input[type=text]:focus {
   transform: translate(-50%);
   user-select: none;
   text-align: center;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid var(--backgroundDark);
   transition: color 0.5s, border-bottom 0.5s;
 }
 
@@ -172,29 +170,20 @@ input[type=text]:focus {
   width: 100vw;
 }
 
-.blank-header {
-  height: 20vh;
-  width: 100vw;
-  background-color: var(--backgroundDark);
-  background-image: url(https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-sun-100-most-used-icons-flaticons-flat-flat-icons-2.png);
-  background-position: 0 50%;
-  background-repeat: repeat-x;
-}
-
-.footer {
-  height: 20vh;
-  width: 100vw;
-  background-color: var(--backgroundDark);
-  background-image: url(https://img.icons8.com/color-glass/48/000000/snowflake.png);
-  background-repeat: repeat-x;
-  background-position: 0 50%;
-}
-
 .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  width: 100vw;
+  background-color: var(--backgroundDark);
+}
+
+.middle {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 40vh;
+  height: 30vh;
   width: 100vw;
   font-family: 'Poppins', sans-serif;
   background-color: white;
@@ -208,6 +197,13 @@ input[type=text]:focus {
   font-size: 2em;
   font-size: 2.2vw;
   justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  height: 20vh;
+  width: 100vw;
+  background-color: var(--backgroundDark);
 }
 
 .typing {

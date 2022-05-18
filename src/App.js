@@ -1,7 +1,10 @@
 import { useState} from 'react';
 import './App.css';
-import Header from './components/Header';
 import Message from './components/Message';
+import SearchBar from '../src/components/SearchBar';
+import WrongCity from '../src/components/WrongCity';
+import Weather from '../src/components/Weather';
+import {ReactComponent as Gitub } from '../src/SVGs/github.svg';
 
 
 
@@ -119,20 +122,34 @@ function App() {
     }
 
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-
   }
+
+  const openInNewTab = (url) => {
+    const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+    if (newWindow) newWindow.opener = null
+  }
+
 
   return (
     <div className='App'>
 
-    <div className="blank-header"></div>
-      <Header locationChosen={locationChosen} temp={temp} icon={icon} condition={condition} loading={loading} 
-      error={error} handleLocation={handleLocation} fetchLocation={fetchLocation} location={location}
-      wrongCity={wrongCity} setWrongCity={setWrongCity} handleUserLocation={handleUserLocation}/>
-
-      <Message />
-    <div className='footer'></div>
-    
+      <div className="header">
+        <div style={{position: "absolute", top: "5px", right: "5px", display: "flex", gap: "5px", cursor: "pointer"}} onClick={()=> openInNewTab("https://github.com/onkyoh")}>
+          <Gitub style={{fill: "white"}}/>
+          <div style={{color: "white"}}>onkyoh</div>
+        </div>
+        <div>
+            <SearchBar error={error} handleLocation={handleLocation} fetchLocation={fetchLocation} location={location} handleUserLocation={handleUserLocation}/>
+            <WrongCity wrongCity={wrongCity} setWrongCity={setWrongCity} loading={loading}/>
+          </div>
+      </div>
+      <div className='middle'>
+        <Weather locationChosen={locationChosen} temp={temp} icon={icon} condition={condition} loading={loading}/> 
+      </div>
+        <Message />
+      <div className='footer'>
+      </div>
+  
     </div>
   );
 }
