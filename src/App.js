@@ -4,7 +4,7 @@ import Message from './components/Message';
 import SearchBar from '../src/components/SearchBar';
 import WrongCity from '../src/components/WrongCity';
 import Weather from '../src/components/Weather';
-import {ReactComponent as Gitub } from '../src/SVGs/github.svg';
+import {ReactComponent as Github } from '../src/SVGs/github.svg';
 
 
 
@@ -135,7 +135,7 @@ function App() {
 
       <div className="header">
         <div style={{position: "absolute", top: "5px", right: "5px", display: "flex", gap: "5px", cursor: "pointer"}} onClick={()=> openInNewTab("https://github.com/onkyoh")}>
-          <Gitub style={{fill: "white"}}/>
+          <Github style={{fill: "white"}}/>
           <div style={{color: "white"}}>onkyoh</div>
         </div>
         <div>
